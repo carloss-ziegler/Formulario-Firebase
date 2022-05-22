@@ -1,0 +1,15 @@
+.form-group svg {
+  font-size: 1.2em;
+}
+.form-group button {
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  font-size: 18px;
+}
+.form-group::placeholder {
+  letter-spacing: 0.1em;
+}
+.formulario .icone svg {
+  margin-top: -20px;
+  font-size: 60px;
+}

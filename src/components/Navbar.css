@@ -1,0 +1,40 @@
+.navbar-brand::after {
+  content: "";
+  position: absolute;
+  height: 0.15rem;
+  width: 100%;
+  background-color: #fff;
+  left: 0;
+  bottom: 0;
+  transition: 0.3s ease-in-out;
+  transform: scale(0, 1);
+}
+.navbar-brand:hover::after {
+  transform: scale(1, 1);
+}
+
+.navbar-brand {
+  position: relative;
+}
+
+.navbar-div {
+  border-bottom: 2px solid #111;
+  letter-spacing: 0.08em;
+}
+
+.nav-img {
+  cursor: pointer;
+  border: 0px solid #222;
+  border-width: 0%;
+  width: 62px;
+  height: 62px;
+  transition: 0.2s ease-in-out;
+}
+.nav-img:hover {
+  border: 2px solid;
+  border-color: #222;
+}
+
+.navbar-div .texto-nav {
+  margin-right: -19px;
+}

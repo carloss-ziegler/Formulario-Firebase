@@ -1,0 +1,14 @@
+.form-group .cancel {
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  font-size: 17px;
+}
+
+h1 .voltar {
+  font-weight: 500;
+  letter-spacing: 0.1em;
+}
+
+form input::placeholder {
+  color: gray;
+}

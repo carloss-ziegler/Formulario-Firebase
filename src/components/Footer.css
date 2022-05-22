@@ -1,0 +1,78 @@
+.footer {
+  margin-top: 8em;
+  background: #343a40;
+  text-align: center;
+  height: 50px;
+  border-top: 2px solid #111;
+}
+.footer p {
+  font-size: 14px;
+  letter-spacing: 0.1em;
+}
+.footer .marmore {
+  font-style: italic;
+}
+
+.social_list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+  border-bottom: 2px solid transparent;
+  transition: 0.2s;
+  width: 25px;
+  margin: 0 auto;
+}
+.social_list:hover {
+  border-color: #000;
+  color: #000;
+}
+.social_list svg {
+  font-size: 1.5em;
+  height: 30px;
+  width: 30px;
+  color: white;
+  transition: 0.2s;
+}
+.social_list svg:hover {
+  color: #999;
+}
+
+.footer-img {
+  cursor: pointer;
+  border-width: 0%;
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  transition: 0.2s;
+  margin-bottom: 14px;
+}
+.footer-img:hover {
+  width: 45px;
+  height: 45px;
+}
+
+div .marmoreli {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+}
+div .meu {
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  margin-top: 13px;
+}
+
+div .borda {
+  justify-content: center;
+  background: #999;
+  width: 1px;
+  height: 37px;
+  margin: 0 auto;
+  margin-left: 50px;
+  margin-top: 5px;
+}

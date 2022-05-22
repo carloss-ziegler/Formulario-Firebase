@@ -1,0 +1,25 @@
+.formulario {
+  display: flex;
+  flex-direction: column;
+}
+
+.formulario .form-group {
+  padding: 5px;
+}
+.formulario .icone svg {
+  margin-top: -20px;
+  font-size: 60px;
+}
+
+.mandar {
+  border-radius: 25px;
+}
+.form-control::placeholder {
+  letter-spacing: 0.1em;
+}
+
+form .text {
+  color: red;
+  font-weight: bold;
+  text-decoration: underline;
+}
