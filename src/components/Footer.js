@@ -14,10 +14,15 @@ const Footer = () => {
           alt="Logo"
           height={47}
         />
-        <p className="mt-1 text-color">
+        <a
+          className="mt-1 text-color"
+          href="https://github.com/carloss-ziegler"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           &lt;<span>DevZiegler/</span>
           &gt;
-        </p>
+        </a>
       </div>
       <div className="borda auto"></div>
       <div className="marmoreli">

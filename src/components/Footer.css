@@ -9,6 +9,18 @@
   font-size: 14px;
   letter-spacing: 0.1em;
 }
+.footer .text-color {
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  margin-bottom: 17px;
+  color: white;
+  transition: 0.1s;
+}
+.footer .text-color:hover {
+  text-decoration: underline;
+}
+
 .footer .marmore {
   font-style: italic;
 }

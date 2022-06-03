@@ -11,10 +11,17 @@ import { InputGroup, InputGroupAddon, Button } from "reactstrap";
 import { Link, useNavigate } from "react-router-dom";
 
 import CachedSharpIcon from "@mui/icons-material/CachedSharp";
-import { collection, deleteDoc, doc, getDocs } from "firebase/firestore";
+import {
+  collection,
+  deleteDoc,
+  doc,
+  getDoc,
+  getDocs,
+} from "firebase/firestore";
 import { db } from "../firebase";
 
 import { motion } from "framer-motion";
+import { toast } from "react-toastify";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -24,6 +31,16 @@ const Home = () => {
   const pageReload = () => {
     window.location.reload();
   };
+
+  function deleteDocument(user) {
+    var ref = doc(db, "clientes", user.id);
+
+    if (window.confirm("Deseja realmente excluir o cadastro??")) {
+      deleteDoc(ref);
+
+      toast.info("Deletado com sucesso, recarregue a tabela!");
+    }
+  }
 
   useEffect(() => {
     const getUsers = async () => {
@@ -68,7 +85,7 @@ const Home = () => {
             className="btn btn-danger ml-auto botao"
             onClick={() => {
               localStorage.removeItem("user");
-              alert("Usuário desconectado!");
+              toast.info("Usuário desconectado!");
               navigate("/login");
             }}
           >
@@ -97,8 +114,8 @@ const Home = () => {
             </tr>
           </thead>
           <tbody>
-            {users.map((user, id) => {
-              return (
+            {users.length > 0 ? (
+              users.map((user, id) => (
                 <tr key={user.id}>
                   <td>{id + 1}</td>
                   <td>{user.nome}</td>
@@ -117,14 +134,18 @@ const Home = () => {
                       title="Deletar cliente"
                       type="button"
                       className="btn btn-sm btn-danger deletar"
-                      // onClick={deleteUser(user.id)}
+                      onClick={() => deleteDocument(user)}
                     >
                       <DeleteSweepIcon />
                     </button>
                   </td>
                 </tr>
-              );
-            })}
+              ))
+            ) : (
+              <tr>
+                <th>Não há cliente</th>
+              </tr>
+            )}
           </tbody>
         </table>
       </div>

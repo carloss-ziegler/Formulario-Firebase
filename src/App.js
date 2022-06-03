@@ -8,6 +8,8 @@ import Login from "./components/Login";
 import { useContext } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { AuthContext } from "./contexts/AuthContext";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   const { currentUser } = useContext(AuthContext);
@@ -20,6 +22,7 @@ function App() {
 
   return (
     <>
+      <ToastContainer autoClose={2000} />
       <Navbar />
       <Routes>
         <Route path="/login" element={<Login />} />

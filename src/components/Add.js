@@ -6,6 +6,7 @@ import "./Add.css";
 import { addDoc, collection } from "firebase/firestore";
 import { db } from "../firebase";
 import PersonAddAltRoundedIcon from "@mui/icons-material/PersonAddAltRounded";
+import { toast } from "react-toastify";
 
 const Add = () => {
   const [newName, setNewName] = useState("");
@@ -24,6 +25,7 @@ const Add = () => {
       telefone: newPhone,
       obs: newObs,
     });
+    toast.success("Cliente adicionado com sucesso!");
     navigate("/");
   };
 
@@ -31,7 +33,7 @@ const Add = () => {
     <div className="container-fluid">
       <h1 className="text-center text-dark py-2 display-2">Cadastro</h1>
       <div className="row formulario">
-        <div className="col-md-6 p-5 mx-auto shadow-lg border border-dark">
+        <div className="col-md-6 p-5 mx-auto shadow-lg bg-light">
           <legend className="text-center icone text-dark">
             <PersonAddAltRoundedIcon />
           </legend>

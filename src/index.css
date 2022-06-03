@@ -1,0 +1,11 @@
+@media screen and (max-width: 600px) {
+  .navbar-div {
+    display: flex;
+  }
+  .navbar-div .navbar-brand {
+    display: none;
+  }
+  .navbar .nav-img {
+    display: none;
+  }
+}
