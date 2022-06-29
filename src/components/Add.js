@@ -25,7 +25,9 @@ const Add = () => {
       telefone: newPhone,
       obs: newObs,
     });
-    toast.success("Cliente adicionado com sucesso!");
+    toast.success("Cliente adicionado com sucesso!", {
+      theme: "colored",
+    });
     navigate("/");
   };
 
@@ -33,14 +35,14 @@ const Add = () => {
     <div className="container-fluid">
       <h1 className="text-center text-dark py-2 display-2">Cadastro</h1>
       <div className="row formulario">
-        <div className="col-md-6 p-5 mx-auto shadow-lg bg-light">
+        <div className="col-md-6 p-5 mx-auto shadow-lg bg-white">
           <legend className="text-center icone text-dark">
             <PersonAddAltRoundedIcon />
           </legend>
           <form>
             <div className="form-group">
               <input
-                className="form-control border border-dark"
+                className="form-control"
                 type="text"
                 placeholder="Nome *"
                 name="name"
@@ -53,7 +55,7 @@ const Add = () => {
             </div>
             <div className="form-group">
               <input
-                className="form-control border border-dark"
+                className="form-control"
                 type="email"
                 placeholder="Email"
                 name="email"
@@ -64,7 +66,7 @@ const Add = () => {
             </div>
             <div className="form-group">
               <input
-                className="form-control border border-dark"
+                className="form-control"
                 type="text"
                 placeholder="Telefone *"
                 name="phone"
@@ -76,7 +78,7 @@ const Add = () => {
             </div>
             <div className="form-group">
               <input
-                className="form-control border border-dark"
+                className="form-control"
                 type="text"
                 placeholder="Observações"
                 name="obs"

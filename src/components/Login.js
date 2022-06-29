@@ -29,7 +29,9 @@ const Login = () => {
       .then((userCredential) => {
         const user = userCredential.user;
         dispatch({ type: "LOGIN", payload: user });
-        toast.success("Conectado!");
+        toast.success("Conectado!", {
+          theme: "colored",
+        });
         navigate("/");
       })
       .catch((error) => {
@@ -41,7 +43,7 @@ const Login = () => {
     <div className="main-container container-fluid">
       <h1 className="text-center text-dark py-3 display-2">Entrar</h1>
       <div className="formulario d-flex">
-        <div className="col-md-6 p-5 mx-auto shadow-lg bg-light rounded border border-dark">
+        <div className="col-md-6 p-5 mx-auto shadow-lg rounded border border-dark">
           <legend className="text-center icone text-dark">
             <AccountCircleIcon />
           </legend>
@@ -59,7 +61,7 @@ const Login = () => {
                 <input
                   placeholder="Email"
                   type="email"
-                  className="form-control border-dark"
+                  className="form-control"
                   ref={emailRef}
                   required
                   autoFocus
@@ -79,7 +81,7 @@ const Login = () => {
                 <input
                   placeholder="Senha"
                   type="password"
-                  className="form-control border-dark"
+                  className="form-control"
                   ref={passwordRef}
                   required
                 />

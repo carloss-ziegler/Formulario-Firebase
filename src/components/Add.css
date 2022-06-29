@@ -13,3 +13,14 @@
   margin-top: -20px;
   font-size: 60px;
 }
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  border: none;
+  border-bottom: 2px solid #333;
+}
+
+button[type="button"]:hover svg {
+  color: #fff;
+}

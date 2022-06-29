@@ -14,6 +14,7 @@ import CachedSharpIcon from "@mui/icons-material/CachedSharp";
 import {
   collection,
   deleteDoc,
+  updateDoc,
   doc,
   getDoc,
   getDocs,
@@ -35,10 +36,12 @@ const Home = () => {
   function deleteDocument(user) {
     var ref = doc(db, "clientes", user.id);
 
-    if (window.confirm("Deseja realmente excluir o cadastro??")) {
+    if (window.confirm("Deseja realmente excluir o cadastro?")) {
       deleteDoc(ref);
 
-      toast.info("Deletado com sucesso, recarregue a tabela!");
+      toast.info("Deletado com sucesso, recarregue a tabela!", {
+        theme: "colored",
+      });
     }
   }
 
@@ -69,7 +72,7 @@ const Home = () => {
             <input
               placeholder="Consultar..."
               type="text"
-              className="search-input border border-dark"
+              className="search-input form-control"
             />
           </InputGroup>
         </div>
@@ -85,7 +88,9 @@ const Home = () => {
             className="btn btn-danger ml-auto botao"
             onClick={() => {
               localStorage.removeItem("user");
-              toast.info("Usuário desconectado!");
+              toast.info("Usuário desconectado!", {
+                theme: "colored",
+              });
               navigate("/login");
             }}
           >

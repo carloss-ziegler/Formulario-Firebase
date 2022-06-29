@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import "./Edit.css";
 
@@ -6,10 +6,32 @@ import { BsFillArrowLeftSquareFill } from "react-icons/bs";
 import { MdCancel } from "react-icons/md";
 import { FaUserEdit } from "react-icons/fa";
 
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import { doc, getDoc, updateDoc } from "firebase/firestore";
+import { db } from "../firebase";
 
 const Edit = () => {
-  const updateUser = async (id, Nome, Email, Telefone, Observações) => {};
+  const { id } = useParams();
+  const docRef = doc(db, "clientes", id);
+  const [user, setUser] = useState([]);
+  const [newName, setName] = useState("");
+
+  useEffect(() => {
+    const getUser = () => {
+      getDoc(docRef).then((doc) => {
+        setUser(doc.data());
+      });
+    };
+    return getUser();
+  }, []);
+
+  const updateClient = () => {
+    updateDoc(docRef, {
+      nome: newName,
+    });
+  };
+
+  console.log(newName);
 
   return (
     <div className="container">
@@ -28,6 +50,8 @@ const Edit = () => {
                   className="form-control"
                   type="text"
                   placeholder="Nome*"
+                  value={user.nome}
+                  // onChange={(e) => setState()}
                   autoFocus
                 />
               </div>
@@ -36,6 +60,7 @@ const Edit = () => {
                   className="form-control"
                   type="email"
                   placeholder="Email*"
+                  value={user.email}
                 />
               </div>
               <div className="form-group">
@@ -43,6 +68,7 @@ const Edit = () => {
                   className="form-control"
                   type="text"
                   placeholder="Telefone*"
+                  value={user.telefone}
                 />
               </div>
               <div className="form-group">
@@ -50,6 +76,7 @@ const Edit = () => {
                   className="form-control"
                   type="text"
                   placeholder="Observações"
+                  value={user.obs}
                 />
               </div>
               <div className="form-group row">
